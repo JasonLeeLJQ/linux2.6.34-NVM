@@ -1,0 +1,1 @@
+cmd_arch/x86/vdso/vdso32-int80-syms.lds := 	nm arch/x86/vdso/vdso32-int80.so.dbg | LC_ALL=C sed -n -e 's/^00*/0/' -e 's/^\([0-9a-fA-F]*\) . \(VDSO[a-zA-Z0-9_]*\)$$/ = 0x;/p' | LC_ALL=C sort > arch/x86/vdso/vdso32-int80-syms.lds
